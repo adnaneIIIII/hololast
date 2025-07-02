@@ -45,3 +45,9 @@ model Contactform {
   message     String
   createdAt   DateTime @default(now())
 }
+
+model Deal {
+  id          String   @id @default(uuid())
+  email       String
+  createdAt   DateTime @default(now())
+} 

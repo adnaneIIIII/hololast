@@ -9,10 +9,8 @@ import {
   Phone,
   Twitter,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useRouter } from "next/router";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -225,7 +223,7 @@ export default function Contact() {
                 <div className="flex justify-start gap-3 mt-4">
                   <button
                     type="submit"
-                    className="w-full py-3 rounded-lg bg-orange-400 border-orange-500 text-white hover:bg-orange-600"
+                    className="w-full py-2 text-black rounded-lg bg-white border-orange-500 hover:bg-orange-600"
                   >
                     {loading ? "Submitting..." : "Submit"}
                   </button>

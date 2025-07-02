@@ -42,3 +42,19 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
+
+
+export async function GET(req: NextRequest) {
+  try {
+    // Fetch all contacts
+    const contacts = await prisma.blog.findMany({
+      orderBy: { createdAt: "desc" }, // Optional: order by newest
+    });
+
+    return NextResponse.json({ success: true, data: contacts });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return NextResponse.json({ success: false, error: "Failed to fetch data" }, { status: 500 });
+  }
+}

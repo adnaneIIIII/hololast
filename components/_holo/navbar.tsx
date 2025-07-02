@@ -81,7 +81,7 @@ function Navbar() {
                 Contact
               </Link>
               <Button variant={"default"}>
-                <Link href="/#pricing">Get for free</Link>
+                <Link href="/#pricing">Get free Trial</Link>
               </Button>
             </nav>
           </div>

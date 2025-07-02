@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { generateMetadata } from "@/utils";
 import Head from "next/head";
 import Clarity from "@/components/Clarity";
+import Script from "next/script";
 
 const geistSans = DM_Sans({
   subsets: ["latin"],
@@ -26,13 +27,21 @@ export default function RootLayout({
         <Clarity />
       </Head>
       <body className={`${geistSans.className} antialiased`}>
+        <Script id="ms_clarity">
+          {`<script type="text/javascript">
+            (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "s8s3mvlgpx");
+            </script>`}
+        </Script>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          
           {children}
         </ThemeProvider>
       </body>

@@ -8,27 +8,22 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { firstname, lastname, email, phone, productname, country } = body;
+    const { title, content, category } = body;
 
-    const contact = await prisma.contact.create({
+    const contact = await prisma.blog.create({
       data: {
-        firstname,
-        lastname,
-        email,
-        phone,
-        productname,
-        country,
+        title,
+        content,
+        category,
       },
     });
 
-    const subject = `New Contact Form Submission from ${firstname} ${lastname}`;
+    const subject = `New Contact Form Submission from ${title}`;
     const htmlContent = `
-      <h2>New Lead</h2>
-      <p><strong>Name:</strong> ${firstname} ${lastname}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Product:</strong> ${productname}</p>
-      <p><strong>Country:</strong> ${country}</p>
+      <h2>New Post</h2>
+      <p><strong>Name:</strong> ${title} </p>
+      <p><strong>Product:</strong> ${content}</p>
+      <p><strong>Country:</strong> ${category}</p>
     `;
 
     resend.emails.send({
@@ -47,4 +42,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-

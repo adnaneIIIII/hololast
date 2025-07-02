@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import {
   Facebook,
@@ -12,14 +12,63 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useRouter } from "next/router";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  // const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setResponse("");
+
+    const res = await fetch("/api/contactform", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const result = await res.json();
+    setLoading(false);
+
+    if (result.success) {
+      setResponse("Form submitted successfully!");
+      setFormData({
+        firstname: "",
+        lastname: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      // router.push(`/pay/${params?.id}`);
+    } else {
+      setResponse("Failed to submit form.");
+    }
+  };
+
   return (
     <div className="bg-black">
       {/* Contact Section */}
       <section
         id="contact"
-        className="w-full  py-12 md:py-24 lg:py-32 bg-card flex justify-center text-white">
+        className="w-full  py-12 md:py-24 lg:py-32 bg-card flex justify-center text-white"
+      >
         <div className="container  px-4 md:px-6">
           <div className="grid gap-6  lg:grid-cols-2 lg:gap-12">
             <div className="flex  flex-col justify-center space-y-4">
@@ -61,98 +110,131 @@ export default function Contact() {
               <div className="flex gap-4">
                 <Link
                   href="#"
-                  className="rounded-full bg-white/10 p-2 hover:bg-white/20">
+                  className="rounded-full bg-white/10 p-2 hover:bg-white/20"
+                >
                   <Instagram className="h-5 w-5" />
                   <span className="sr-only">Instagram</span>
                 </Link>
                 <Link
                   href="#"
-                  className="rounded-full bg-white/10 p-2 hover:bg-white/20">
+                  className="rounded-full bg-white/10 p-2 hover:bg-white/20"
+                >
                   <Twitter className="h-5 w-5" />
                   <span className="sr-only">Twitter</span>
                 </Link>
                 <Link
                   href="#"
-                  className="rounded-full bg-white/10 p-2 hover:bg-white/20">
+                  className="rounded-full bg-white/10 p-2 hover:bg-white/20"
+                >
                   <Facebook className="h-5 w-5" />
                   <span className="sr-only">Facebook</span>
                 </Link>
                 <Link
                   href="#"
-                  className="rounded-full bg-white/10 p-2 hover:bg-white/20">
+                  className="rounded-full bg-white/10 p-2 hover:bg-white/20"
+                >
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
               </div>
             </div>
             <div className="rounded-lg border bg-zinc-800  p-6 shadow-lg">
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <label
                       htmlFor="first-name"
-                      className="text-sm font-medium leading-none">
+                      className="text-sm font-medium leading-none"
+                    >
                       First name
                     </label>
                     <Input
-                      id="first-name"
-                      placeholder="Enter your first name"
-                      className=" border-zinc-900 text-white "
+                      key="firstname"
+                      name="firstname"
+                      value={formData.firstname}
+                      onChange={handleChange}
+                      placeholder="Firstname"
+                      className="flex-1 text-gray-900 block w-full rounded-none rounded-r-md py-2 px-3 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                     />
                   </div>
                   <div className="space-y-2">
                     <label
                       htmlFor="last-name"
-                      className="text-sm font-medium leading-none">
+                      className="text-sm font-medium leading-none"
+                    >
                       Last name
                     </label>
                     <Input
-                      id="last-name"
-                      placeholder="Enter your last name"
-                      className=" border-zinc-900 text-white "
+                      key="lastname"
+                      name="lastname"
+                      value={formData.lastname}
+                      onChange={handleChange}
+                      placeholder="Lastname"
+                      className="border-zinc-900 text-white"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label
                     htmlFor="email"
-                    className="text-sm font-medium leading-none">
+                    className="text-sm font-medium leading-none"
+                  >
                     Email
                   </label>
                   <Input
-                    id="email"
-                    placeholder="Enter your email"
-                    type="email"
-                    className="border-zinc-900 text-white "
+                    key="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    className="border-zinc-900 text-white"
                   />
                 </div>
                 <div className="space-y-2">
                   <label
-                    htmlFor="company"
-                    className="text-sm font-medium leading-none">
+                    htmlFor="phone"
+                    className="text-sm font-medium leading-none"
+                  >
                     Company
                   </label>
                   <Input
-                    id="company"
-                    placeholder="Enter your company name"
+                    key="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Phone"
                     className="border-zinc-900 text-white"
                   />
                 </div>
                 <div className="space-y-2">
                   <label
                     htmlFor="message"
-                    className="text-sm font-medium leading-none">
+                    className="text-sm font-medium leading-none"
+                  >
                     Message
                   </label>
                   <Textarea
-                    id="message"
-                    placeholder="Enter your message"
+                    key="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="message"
                     className="min-h-[120px] border-zinc-900 text-white"
                   />
                 </div>
-                <Button className="w-full bg-white border-zinc-900 text-zinc-900 hover:bg-zinc-900 hover:text-white">
-                  Send Message
-                </Button>
+                <div className="flex justify-start gap-3 mt-4">
+                  <button
+                    type="submit"
+                    className="w-full py-3 rounded-lg bg-orange-400 border-orange-500 text-white hover:bg-orange-600"
+                  >
+                    {loading ? "Submitting..." : "Submit"}
+                  </button>
+
+                  {/* <Button className="w-full py-6 bg-orange-400 border-orange-500 text-white hover:bg-orange-600 ">
+                        Submit Now
+                        {loading ? "Submitting..." : "Submited"}
+                      </Button> */}
+                </div>
               </form>
             </div>
           </div>

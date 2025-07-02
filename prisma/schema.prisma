@@ -23,3 +23,25 @@ model Contact {
   country     String
   createdAt   DateTime @default(now())
 }
+
+
+model Blog {
+  id          String   @id @default(uuid())
+  title       String
+  content     String
+  category    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+
+model Contactform {
+  id          String   @id @default(uuid())
+  firstname   String
+  lastname    String
+  email       String
+  phone       String
+
+  message     String
+  createdAt   DateTime @default(now())
+}

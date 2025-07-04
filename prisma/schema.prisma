@@ -30,6 +30,9 @@ model Blog {
   title       String
   content     String
   category    String
+  imgUrl      String
+  author      String
+  tags        String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

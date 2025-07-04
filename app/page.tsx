@@ -143,7 +143,7 @@ export default function Page() {
       <LogoTicker />
       {/* <ProductShow /> */}
       <PricingSection {...product} />
-      {/* <BlogPost pos={blogPosts} /> */}
+      <BlogPost  />
       <Analysis />
       <Component />
       {/* <Pricing product={product} />*/}

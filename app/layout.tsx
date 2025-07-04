@@ -5,6 +5,9 @@ import { generateMetadata } from "@/utils";
 import Head from "next/head";
 import Clarity from "@/components/Clarity";
 import Script from "next/script";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { ourFileRouter } from "@/app/api/uploadthing/core";
+import { extractRouterConfig } from "uploadthing/server";
 
 const geistSans = DM_Sans({
   subsets: ["latin"],
@@ -42,6 +45,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+            <NextSSRPlugin
+          /**
+           * The `extractRouterConfig` will extract **only** the route configs
+           * from the router to prevent additional information from being
+           * leaked to the client. The data passed to the client is the same
+           * as if you were to fetch `/api/uploadthing` directly.
+           */
+          routerConfig={extractRouterConfig(ourFileRouter)}
+        />
           {children}
         </ThemeProvider>
       </body>

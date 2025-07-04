@@ -106,17 +106,20 @@ export default function PricingSection(props: Product[]) {
     <section className="py-16 px-4   min-h-screen" id="pricing">
       <div className="max-w-7xl mx-auto">
         {/* Top Banner */}
-        <div className="border-orange-500 border-2 rounded-lg p-4 mb-12 text-center">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <Zap className="h-5 w-5 text-white" />
-            <span className="text-white font-semibold text-lg">
-              24h Free Trial Available
-            </span>
+        <Link href="/free-trial">
+          <div className="border-orange-500 border-2 rounded-lg p-4 mb-12 text-center">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <Zap className="h-5 w-5 text-white" />
+              <span className="text-white font-semibold text-lg">
+                24h Free Trial Available
+              </span>
+            </div>
+            <p className="text-orange-100 text-sm">
+              Try our service risk-free for 24 hours before committing to any
+              plan no credit card required.
+            </p>
           </div>
-          <p className="text-orange-100 text-sm">
-            Try our service risk-free for 24 hours before committing to any plan
-          </p>
-        </div>
+        </Link>
 
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -181,13 +184,13 @@ export default function PricingSection(props: Product[]) {
                     variant={plan.buttonVariant}
                     asChild
                   >
-                    <Link
+                    <a
                       href={`https://mntdigital.com/checkout/${props[index]?.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       Get Started
-                    </Link>
+                    </a>
                   </Button>
                 </div>
               </CardContent>

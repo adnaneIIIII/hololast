@@ -8,22 +8,28 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { title, content, category } = body;
+    const { title, content, category, author, tags, imgUrl } = body;
 
     const contact = await prisma.blog.create({
       data: {
         title,
         content,
         category,
+        author,
+        tags,
+        imgUrl, // Placeholder image URL
       },
     });
 
     const subject = `New Contact Form Submission from ${title}`;
     const htmlContent = `
       <h2>New Post</h2>
-      <p><strong>Name:</strong> ${title} </p>
-      <p><strong>Product:</strong> ${content}</p>
-      <p><strong>Country:</strong> ${category}</p>
+      <p><strong>title:</strong> ${title} </p>
+      <p><strong>content:</strong> ${content}</p>
+      <p><strong>category:</strong> ${category}</p>
+      <p><strong>author:</strong> ${author}</p>
+      <p><strong>tags:</strong> ${tags}</p>
+      <p><strong>imgUrl:</strong> ${imgUrl}</p>
     `;
 
     resend.emails.send({
@@ -43,18 +49,19 @@ export async function POST(req: NextRequest) {
   }
 }
 
-
-
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
-    // Fetch all contacts
     const contacts = await prisma.blog.findMany({
-      orderBy: { createdAt: "desc" }, // Optional: order by newest
+      orderBy: { createdAt: "desc" },
     });
 
-    return NextResponse.json({ success: true, data: contacts });
+    return new Response(JSON.stringify(contacts), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (error) {
-    console.error("Error fetching data:", error);
-    return NextResponse.json({ success: false, error: "Failed to fetch data" }, { status: 500 });
+    return new Response(JSON.stringify({ error: "Failed to fetch contacts" }), {
+      status: 500,
+    });
   }
 }

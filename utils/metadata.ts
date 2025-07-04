@@ -19,17 +19,17 @@ interface MetadataProps {
   
 
 export const generateMetadata = ({
-    title = `MntDigital | Creative Content & Social Media Marketing Agency`,
-    description = `MntDigital is a results-driven content and social media agency helping brands grow with creative strategy, viral content, and audience engagement.`,
+    title = `HOLOIPTV | Premium IPTV Services with HD Quality`,
+    description = `HOLOIPTV offers premium IPTV services with a wide range of channels, on-demand content subscription plans. Stream anytime, anywhere, with HD quality.`,
     icons = [
       {
         rel: "icon",
-        url: "/icon.png",
+        url: "/iptv-service.png",
         media: "(prefers-color-scheme: light)",
       },
       {
         rel: "icon",
-        url: "/icon.png",
+        url: "/iptv-service.png",
         media: "(prefers-color-scheme: dark)",
       },
     ],
@@ -46,7 +46,7 @@ export const generateMetadata = ({
     telephone,
   }: MetadataProps = {}): Metadata => {
     const metadataBase = new URL(
-      process.env.NEXT_PUBLIC_APP_URL || "https://mntdigital.com"
+      process.env.NEXT_PUBLIC_APP_URL || "https://holoiptv.com/"
     );
   
     return {

@@ -46,10 +46,10 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "HOLOIPTV",
-    url: "https://mntdigital.com",
+    url: "https://holoiptv.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://mntdigital.com/iptv-service.png",
+      url: "https://holoiptv.com/iptv-service.png",
     },
     sameAs: ["https://facebook.com/holoiptv", "https://instagram.com/holoiptv"],
     contactPoint: {
@@ -65,10 +65,10 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "HOLOIPTV",
-    url: "https://mntdigital.com",
+    url: "https://holoiptv.com",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://mntdigital.com/search?q={search_term_string}",
+      target: "https://holoiptv.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };

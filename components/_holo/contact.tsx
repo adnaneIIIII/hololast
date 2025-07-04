@@ -94,7 +94,7 @@ export default function Contact() {
                   <Mail className="mt-1 h-5 w-5 " />
                   <div>
                     <h3 className="font-bold">Email</h3>
-                    <p className="">support@mntdigital.com</p>
+                    <p className="">support@holoiptv.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

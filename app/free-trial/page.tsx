@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "@/components/_home/header";
 import { Lock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -15,6 +14,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
+import Header from "@/components/_home/header";
 
 export default function Page() {
   const [formData, setFormData]=useState({
@@ -68,7 +68,7 @@ export default function Page() {
     <>
       <Head>
         <title>
-          MntDigital | Creative Content & Social Media Marketing Agency
+          holoiptv | Creative Content & Social Media Marketing Agency
         </title>
       </Head>
       {/* Header */}

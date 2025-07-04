@@ -30,7 +30,7 @@ function Navbar() {
           content="Explore top IPTV services for seamless streaming."
         />
         <meta property="og:image" content="/path-to-image.jpg" />
-        <meta property="og:url" content="https://mntdigital.com/home" />
+        <meta property="og:url" content="https://holoiptv.com/" />
         <meta name="robots" content="index, follow" />
       </Head>
 
@@ -40,7 +40,7 @@ function Navbar() {
             {/* Logo */}
             <div className="relative">
               <div className="absolute w-full top-1 bottom-0 bg-gradient-to-r from-[#a52f0094] to-[#3d3721c5] blur-md"></div>
-              <Link href={"/home"}>
+              <Link href={"/"}>
                 <Image
                   src={"/iptv-service.png"}
                   width={120}
@@ -91,20 +91,20 @@ function Navbar() {
         {mobileOpen && (
           <nav className="sm:block md:hidden px-4 pb-6">
             <ul className="flex flex-col gap-4 mt-4 text-white">
-              <Link href="/home#lFeatures" onClick={() => setMobileOpen(false)}>
+              <Link href="#lFeatures" onClick={() => setMobileOpen(false)}>
                 Features
               </Link>
-              <Link href="/home#pricing" onClick={() => setMobileOpen(false)}>
+              <Link href="/#pricing" onClick={() => setMobileOpen(false)}>
                 Pricing
               </Link>
               <Link href="/how-it-work" onClick={() => setMobileOpen(false)}>
                 How it Work
               </Link>
-              <Link href="/home#contact" onClick={() => setMobileOpen(false)}>
+              <Link href="/#contact" onClick={() => setMobileOpen(false)}>
                 Contact
               </Link>
               <Button variant={"default"}>
-                <Link href="/home#pricing">Get for free</Link>
+                <Link href="/#pricing">Get for free</Link>
               </Button>
             </ul>
           </nav>

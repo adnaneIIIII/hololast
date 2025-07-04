@@ -1,36 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { CheckCircle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <header
-      className={`sticky top-0 z-10 transition-all duration-300 bg-white ${
-        scrolled ? "bg-white shadow-md" : "bg-transparent"
-      }`}
-    >
+    <header className="bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Link href={"/home"}>
+          <Link href={"/"}>
             <Image
-              src={"/Mntdigital-b.png"}
+              src={"/iptv-service-dark.png"}
               width={120}
               height={100}
-              alt="mntdigital"
+              alt="holoiptv"
               className="h-14 w-28 relative"
             />
           </Link>
@@ -46,7 +30,7 @@ export default function Header() {
 
             <div className="flex items-center">
               <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500 text-white">
-              <span className="text-xs font-bold">2</span>
+                <span className="text-xs font-bold">2</span>
               </div>
               <span className="ml-2 text-sm font-medium text-gray-600">
                 Details

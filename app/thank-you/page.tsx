@@ -19,7 +19,7 @@ export default function page() {
           We will send you your subscription details to the email provided.
         </p>
         <Button className="bg-orange-400 mt-4 text-white font-bold py-6 px-6 rounded">
-          <Link href={"/home"} className="flex items-center gap-1">
+          <Link href={"/"} className="flex items-center gap-1">
             <ArrowLeft /> <p> Back to Home</p>
           </Link>
         </Button>

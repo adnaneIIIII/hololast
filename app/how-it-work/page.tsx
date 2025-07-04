@@ -26,7 +26,7 @@ export default function HowItWorks() {
             How It<span className="text-orange-500"> Works</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Get started with MNTDIGITAL IPTV in just 3 simple steps. Setup takes
+            Get started with holoiptv IPTV in just 3 simple steps. Setup takes
             less than 5 minutes!
           </p>
         </section>
@@ -259,7 +259,7 @@ export default function HowItWorks() {
                 Contact Support
               </Link>
               <Link
-                href="/trial"
+                href="/#pricing"
                 className="bg-transparent border border-white text-white hover:bg-orange-600 px-6 py-3 rounded-md font-medium"
               >
                 Start Free Trial

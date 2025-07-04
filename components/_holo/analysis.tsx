@@ -21,7 +21,7 @@ const Analysis = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-400 mx-auto rounded-full"></div>
 
           <p>
-            Get started with MNTDIGITAL IPTV in just 3 simple steps. Setup takes
+            Get started with holoiptv IPTV in just 3 simple steps. Setup takes
             less than 5 minutes!
           </p>
         </div>

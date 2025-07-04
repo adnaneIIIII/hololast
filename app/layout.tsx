@@ -14,7 +14,7 @@ const geistSans = DM_Sans({
 });
 
 export const metadata = generateMetadata({
-  email: "support@mntdigital.com",
+  email: "support@holoiptv.com",
   telephone: "+17822221472",
 });
 

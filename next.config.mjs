@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
+/** @type {import('next-sitemap').IConfig} */
+
 const nextConfig = {
+  reactStrictMode: true,
+
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>

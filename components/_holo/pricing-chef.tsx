@@ -185,7 +185,7 @@ export default function PricingSection(props: Product[]) {
                     asChild
                   >
                     <a
-                      href={`https://mntdigital.com/checkout/${props[index]?.id}`}
+                      href={`https://holoiptv.com/checkout/${props[index]?.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

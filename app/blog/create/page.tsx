@@ -96,7 +96,7 @@ export default function ProductPage() {
     <>
       <Head>
         <title>
-          MntDigital | Creative Content & Social Media Marketing Agency
+          holoiptv | Creative Content & Social Media Marketing Agency
         </title>
       </Head>
       {/* Header */}

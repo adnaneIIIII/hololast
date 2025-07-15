@@ -39,6 +39,7 @@ const nextConfig = {
       "ik.imagekit.io",
       "images.pexels.com",
       "utfs.io",
+      "randomuser.me",
     ],
   },
 };

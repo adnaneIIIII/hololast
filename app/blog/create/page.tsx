@@ -14,7 +14,6 @@ import { UploadDropzone } from "@/utils/uploadthing";
 import { XIcon } from "lucide-react";
 
 export default function ProductPage() {
- 
   const [images, setImages] = useState<string[]>([]);
 
   const handleDelete = (index: number) => {
@@ -96,7 +95,7 @@ export default function ProductPage() {
     <>
       <Head>
         <title>
-          holoiptv | Creative Content & Social Media Marketing Agency
+          mntdigital | Creative Content & Social Media Marketing Agency
         </title>
       </Head>
       {/* Header */}
@@ -107,7 +106,7 @@ export default function ProductPage() {
             <div className="lg:col-span-7">
               <div className=" rounded-lg shadow-sm p-6 transition-all">
                 <div className="text-5xl font-bold text-black/80 py-14  tracking-wider">
-                  CheckOut
+                  Create post
                 </div>
                 <h1 className="text-2xl font-bold text-gray-800 mb-6">
                   Details

@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
-import { Calendar, Clock, User } from "lucide-react";
-import { useEffect, useState } from "react";
-import Head from "next/head";
 import Navbar from "@/components/_holo/navbar";
+import Head from "next/head";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { User, Clock } from "lucide-react";
 import FooterSection from "@/components/_holo/footer";
 
 export default function ProductPage({ params }: { params: { id: string } }) {
@@ -12,13 +12,12 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     title: string;
     content: string;
     category: string;
-    imgUrl?: string; // Optional image URL
-    author?: string; // Optional author field
-    tags?: string; // Optional tags field
+    imgUrl: string; // Optional image URL
+    author: string; // Optional author field
+    tags: string; // Optional tags field
     createdAt: string;
     updatedAt: string;
   };
-
   const [blog, setBlog] = useState<Blog | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -31,7 +30,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         setBlog(data);
       } catch (err) {
         console.error(err);
-        setBlog(null);       // show “not found” message later
+        setBlog(null); // show “not found” message later
       } finally {
         setLoading(false);
       }
@@ -41,9 +40,14 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     fetchBlog();
   }, [params.id]);
 
-  if (loading) return <p>Loading...</p>;
-  if (!blog)   return <p>Blog post not found.</p>;
-    // SEO
+  if (loading)
+    return (
+      <div className="w-full min-h-screen h-dvh flex flex-col items-center justify-center bg-background/80 backdrop-blur-md fixed inset-0 z-[9999]">
+        <div className="border-2 border-t-primary border-border rounded-full w-8 h-8 animate-spin"></div>
+      </div>
+    );
+  if (!blog) return <p>Blog post not found.</p>;
+  // SEO
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -57,15 +61,15 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     },
     publisher: {
       "@type": "Organization",
-      name: "HOLOIPTV",
+      name: "mntdigital",
       logo: {
         "@type": "ImageObject",
-        url: "https://HOLOIPTV.com/logo.png",
+        url: "https://mntdigital.com/Mntdigital-w.png",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://HOLOIPTV.com/blog/${params.id}`,
+      "@id": `https://mntdigital.com/blog/${params.id}`,
     },
   };
   return (
@@ -81,7 +85,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
         <Navbar />
 
-        {/* Main Content */}
         <main className="max-w-4xl mx-auto px-4 py-12">
           <article className="prose prose-lg prose-gray max-w-none">
             {/* Post Header */}
@@ -99,7 +102,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               <div className="flex items-center space-x-6 text-gray-600 mb-8">
                 <div className="flex items-center space-x-2">
                   <User className="w-4 h-4" />
-                  <span>Ayoub el.</span>
+                  <span>{blog.author}</span>
                 </div>
                 {/* <div className="flex items-center space-x-2">
                   <Calendar className="w-4 h-4" />
@@ -115,16 +118,11 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             {/* Featured Image */}
             <div className="not-prose mb-8">
               <Image
-                src={
-                  blog.imgUrl?.startsWith("http") ||
-                  blog.imgUrl?.startsWith("/")
-                    ? blog.imgUrl
-                    : "/placeholder.svg"
-                }
-                alt={blog.title}
+                src={blog?.imgUrl}
+                alt={blog.title || "Blog post image"}
                 width={400}
-                height={240}
-                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                height={400}
+                className="w-full h-440 object-cover transition-transform duration-300 group-hover:scale-110"
               />
             </div>
 
@@ -168,7 +166,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                   className="rounded-full"
                 />
                 <div>
-                  <h4 className="text-lg font-semibold  mb-2">ayoubelhrichi</h4>
+                  <h4 className="text-lg font-semibold  mb-2">{blog.author}</h4>
                   <p className=" mb-3">
                     Experienced IPTV Technician with over 8 years of expertise
                     in setting up, maintaining, and optimizing IPTV systems.
@@ -192,7 +190,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             </div>
           </article>
         </main>
-        <FooterSection />
+        <FooterSection/>
       </div>
     </>
   );

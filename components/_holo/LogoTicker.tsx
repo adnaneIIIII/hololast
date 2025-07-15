@@ -40,6 +40,7 @@ export default function LogoTicker() {
         </div>
         
 
+      
         <div className="flex overflow-hidden mt-10 before:content-[''] before:z-10 after:content-[''] before:absolute after:absolute before:h-full after:h-full before:w-10 after:w-10 relative  after:right-0 before:left-0 before:top-0 after:top-0 before:bg-[linear-gradient(to_right,#0a0a0a,rgb(0,0,0,0))] after:bg-[linear-gradient(to_left,#0a0a0a,rgb(0,0,0,0))]">
           <motion.div
             transition={{

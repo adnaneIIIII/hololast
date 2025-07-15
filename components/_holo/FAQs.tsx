@@ -23,7 +23,7 @@ const items = [
   {
     question: "What does the package include?",
     answer:
-      "When you subscribe to HOLOIPTV, you get login credentials to IPTV server with instructions for how to setup it on your device.",
+      "When you subscribe to mntdigital, you get login credentials to IPTV server with instructions for how to setup it on your device.",
   },
   {
     question: "Do you offer a free trial?",
@@ -95,11 +95,11 @@ export default function Faq() {
     <div className=" px-4 py-[72px] sm:py-24 flex justify-center">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold   mb-4">
             FAQ
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-400 mx-auto rounded-full"></div>
-          <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
+          <p className="  mt-6 text-lg max-w-2xl mx-auto">
             frequently asked questions
           </p>
         </div>

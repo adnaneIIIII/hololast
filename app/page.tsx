@@ -15,6 +15,7 @@ import Devices from "@/components/_holo/devices";
 import Faq from "@/components/_holo/FAQs";
 import CallToAction from "@/components/_holo/CallToAction";
 import BlogPost from "@/components/_holo/blog";
+import Testimonials from "@/components/_holo/ui/testimonials-marquee";
 
 type Product = {
   compareAtPrice: number;
@@ -33,28 +34,31 @@ type GetProductResponse = {
   product: Product[];
 };
 
-type BlogItem = {
-  id: string;
-  title: string;
-  content: string;
-  category: string;
-  createdAt: Date;
-};
+// type BlogItem = {
+//   id: string;
+//   title: string;
+//   content: string;
+//   category: string;
+//   createdAt: Date;
+// };
 export default function Page() {
   // SEO
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "HOLOIPTV",
-    url: "https://holoiptv.com",
+    name: "mntdigital",
+    url: "https://mntdigital.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://holoiptv.com/iptv-service.png",
+      url: "https://mntdigital.com/iptv-service.png",
     },
-    sameAs: ["https://facebook.com/holoiptv", "https://instagram.com/holoiptv"],
+    sameAs: [
+      "https://facebook.com/mntdigital",
+      "https://instagram.com/mntdigital",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
-      email: "support@holoiptv.com",
+      email: "support@mntdigital.com",
       telephone: "+212611223344",
       contactType: "customer support",
       areaServed: "Worldwide",
@@ -64,11 +68,11 @@ export default function Page() {
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "HOLOIPTV",
-    url: "https://holoiptv.com",
+    name: "mntdigital",
+    url: "https://mntdigital.com",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://holoiptv.com/search?q={search_term_string}",
+      target: "https://mntdigital.com/search?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };
@@ -129,8 +133,6 @@ export default function Page() {
   //   Posts_();
   // }, []);
 
-
-
   return (
     <>
       {/* <Banner /> */}
@@ -143,12 +145,13 @@ export default function Page() {
       <LogoTicker />
       {/* <ProductShow /> */}
       <PricingSection {...product} />
-      <BlogPost  />
+      
       <Analysis />
-      <Component />
+      {/* <Component /> */}
+      <BlogPost />
       {/* <Pricing product={product} />*/}
       <Devices />
-
+      <Testimonials/>
       <Contact />
       <Faq />
       {/* <LanguageSupport /> */}

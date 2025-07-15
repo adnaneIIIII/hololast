@@ -17,7 +17,7 @@ import { useRouter } from "next/navigation";
 import Header from "@/components/_home/header";
 
 export default function Page() {
-  const [formData, setFormData]=useState({
+  const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
     email: "",
@@ -26,8 +26,8 @@ export default function Page() {
     country: "",
   });
 
-  const [loading, setLoading]=useState(false);
-  const [response, setResponse]=useState("");
+  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -39,36 +39,29 @@ export default function Page() {
     setLoading(true);
     setResponse("");
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: { "Content-Type": "application/json" },
-    });
-
-    const result = await res.json();
-    setLoading(false);
-
-    if (result.success) {
-      setResponse("Form submitted successfully!");
-      setFormData({
-        firstname: "",
-        lastname: "",
-        email: "",
-        phone: "",
-        productname: "",
-        country: "",
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
       });
-      router.push(`/thank-you?product=${formData.productname}`);
-    } else {
-      setResponse("Failed to submit form.");
+  
+      const result = await res.json();
+  
+     
+    } catch (error) {
+      setResponse("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
+
 
   return (
     <>
       <Head>
         <title>
-          holoiptv | Creative Content & Social Media Marketing Agency
+          mntdigital | Creative Content & Social Media Marketing Agency
         </title>
       </Head>
       {/* Header */}

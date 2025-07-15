@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
+import FooterSection from "./footer";
 
 type Blog = {
   id: string;
@@ -33,20 +33,25 @@ export default function BlogPost() {
     fetchContacts();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+         <div className="flex items-center justify-center h-screen">
+      <div className="h-10 w-10 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
+    </div>
+    );
 
   return (
-    <section className=" py-16 px-4 sm:px-6 lg:px-8">
+    <section className=" py-16 px-4 sm:px-6 lg:px-8" id="blog"> 
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
 
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold  mb-4">
             Latest Blog Posts
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-400 mx-auto rounded-full"></div>
-          <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
-            Stay updated with the latest IPTV trends, guides, and industry
+          <p className=" mt-6 text-lg max-w-2xl mx-auto">
+            Stay updated with the latest IPTV trends, <br/>guides, and industry
             insights
           </p>
         </div>
@@ -74,7 +79,7 @@ export default function BlogPost() {
                   />
 
                   <div className="absolute top-4 left-4">
-                    <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-orange-500  px-3 py-1 rounded-full text-sm font-medium">
                       {post.category}
                     </span>
                   </div>
@@ -82,7 +87,7 @@ export default function BlogPost() {
                 </div>
 
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-4 text-gray-400 text-sm mb-3">
+                  <div className="flex items-center gap-4  text-sm mb-3">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
                       <span>{post.createdAt.toString()}</span>
@@ -93,11 +98,11 @@ export default function BlogPost() {
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300 line-clamp-2">
+                  <h3 className="text-xl font-bold  mb-3 group-hover:text-orange-400 transition-colors duration-300 line-clamp-2">
                     {post.title}
                   </h3>
 
-                  <p className="text-gray-300 mb-6 line-clamp-3 leading-relaxed">
+                  <p className=" mb-6 line-clamp-3 leading-relaxed">
                     <div
                       className="prose prose-lg max-w-none"
                       dangerouslySetInnerHTML={{ __html: post?.content || "" }}
@@ -110,7 +115,7 @@ export default function BlogPost() {
                   >
                     <Link
                       className="flex items-center"
-                      href={`/blogs/${post.id}`}
+                      href={`/post/${post.id}`}
                     >
                       <span>Read More</span>
                       <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover/btn:translate-x-1" />

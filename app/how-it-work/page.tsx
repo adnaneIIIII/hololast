@@ -16,9 +16,9 @@ import FooterSection from "@/components/_holo/footer";
 export default function HowItWorks() {
   return (
     <>
-    <Head>
-  <title>Best IPTV Service - High-Quality Streaming</title>
-</Head>
+      <Head>
+        <title>Best IPTV Service - High-Quality Streaming</title>
+      </Head>
       <Navbar />
       <main className="min-h-screen bg-black text-white">
         <section className="container mx-auto text-center py-16 px-4">
@@ -26,7 +26,7 @@ export default function HowItWorks() {
             How It<span className="text-orange-500"> Works</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Get started with holoiptv IPTV in just 3 simple steps. Setup takes
+            Get started with mntdigital IPTV in just 3 simple steps. Setup takes
             less than 5 minutes!
           </p>
         </section>
@@ -267,7 +267,7 @@ export default function HowItWorks() {
             </div>
           </div>
         </section>
-        <FooterSection/>
+        <FooterSection />
       </main>
     </>
   );

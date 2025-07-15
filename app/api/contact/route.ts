@@ -21,6 +21,14 @@ export async function POST(req: NextRequest) {
       },
     });
 
+    const to = `<p>${email}</p>`;
+    const too = `<p>zarveo@gmail.com</p>`;
+    const thankyou = `
+    <h2>Thank You for Your Lead</h2>
+    <p>We appreciate your interest in our product. We will get back to you soon.</p>
+    <p>Best regards,</p>
+    `;
+
     const subject = `New Contact Form Submission from ${firstname} ${lastname}`;
     const htmlContent = `
       <h2>New Lead</h2>
@@ -34,7 +42,7 @@ export async function POST(req: NextRequest) {
     resend.emails.send({
       from: "onboarding@resend.dev",
       to: "zarveo@gmail.com",
-      subject: "Hello World",
+      subject: subject,
       html: htmlContent,
     });
 
@@ -47,4 +55,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-

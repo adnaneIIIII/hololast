@@ -11,11 +11,11 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           <Link href={"/"}>
             <Image
-              src={"/iptv-service-dark.png"}
+              src={"/Mntdigitals-bo.png"}
               width={120}
               height={100}
-              alt="holoiptv"
-              className="h-14 w-28 relative"
+              alt="mntdigital"
+              className="h-18 w-28 relative"
             />
           </Link>
           <div className="hidden sm:flex items-center space-x-6">

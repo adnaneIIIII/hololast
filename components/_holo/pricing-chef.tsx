@@ -106,15 +106,24 @@ export default function PricingSection(props: Product[]) {
     <section className="py-16 px-4   min-h-screen" id="pricing">
       <div className="max-w-7xl mx-auto">
         {/* Top Banner */}
+           <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold  mb-4">
+            Pricing
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-400 mx-auto rounded-full"></div>
+          <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
+            you can try our service before <br/> pay no billing are required
+          </p>
+        </div>
         <Link href="/free-trial">
           <div className="border-orange-500 border-2 rounded-lg p-4 mb-12 text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <Zap className="h-5 w-5 text-white" />
-              <span className="text-white font-semibold text-lg">
-                24h Free Trial Available
+              
+              <span className=" flex items-center gap-2 font-semibold underline hover:/65 text-lg">
+               <Zap className="h-5 w-5 " /> 24h Free Trial Available
               </span>
             </div>
-            <p className="text-orange-100 text-sm">
+            <p className="text-orange-100 text-sm hover:/65">
               Try our service risk-free for 24 hours before committing to any
               plan no credit card required.
             </p>
@@ -125,7 +134,7 @@ export default function PricingSection(props: Product[]) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {pricingPlans.map((plan, index: number) => (
             <Card
-              className={`relative h-full flex flex-col text-white transition-all duration-300 hover:scale-105 ${
+              className={`relative h-full flex flex-col  transition-all duration-300 hover:scale-105 ${
                 plan.isPopular
                   ? "ring-2 ring-orange-500 shadow-2xl shadow-orange-500/20"
                   : "hover:border-gray-600"
@@ -133,17 +142,17 @@ export default function PricingSection(props: Product[]) {
               key={index}
             >
               {plan.isPopular && (
-                <Badge className="absolute -top-3 right-4 bg-orange-500 hover:bg-orange-600 text-white ">
+                <Badge className="absolute -top-3 right-4 bg-orange-500 hover:bg-orange-600  ">
                   Most Popular
                 </Badge>
               )}
 
               <CardHeader className="text-center pb-4">
-                <h3 className="text-xl font-bold text-white mb-2">
+                <h3 className="text-xl font-bold  mb-2">
                   {plan.name}
                 </h3>
                 <div className="mb-2">
-                  <span className="text-3xl font-bold text-white">
+                  <span className="text-3xl font-bold ">
                     {plan.price}
                   </span>
                   <span className="text-gray-400 ml-1">/ {plan.period}</span>
@@ -168,7 +177,7 @@ export default function PricingSection(props: Product[]) {
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-center text-sm">
                       <Check className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />
-                      <span className="text-gray-300">{feature}</span>
+                      <span className="">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -185,7 +194,7 @@ export default function PricingSection(props: Product[]) {
                     asChild
                   >
                     <a
-                      href={`https://holoiptv.com/checkout/${props[index]?.id}`}
+                      href={`https://mntdigital.com/checkout/${props[index]?.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

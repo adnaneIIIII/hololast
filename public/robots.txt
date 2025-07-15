@@ -1,0 +1,15 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /api
+Disallow: /404
+Disallow: /500
+
+# Host
+Host: https://mntdigital.com
+
+# Sitemaps
+Sitemap: https://mntdigital.com/sitemap.xml
+Sitemap: https://mntdigital.com/server-sitemap.xml

@@ -65,7 +65,7 @@ export default function Contact() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="w-full  py-12 md:py-24 lg:py-32 bg-card flex justify-center text-white"
+        className="w-full  py-12 md:py-24 lg:py-32 bg-card flex justify-center "
       >
         <div className="container  px-4 md:px-6">
           <div className="grid gap-6  lg:grid-cols-2 lg:gap-12">
@@ -94,7 +94,7 @@ export default function Contact() {
                   <Mail className="mt-1 h-5 w-5 " />
                   <div>
                     <h3 className="font-bold">Email</h3>
-                    <p className="">support@holoiptv.com</p>
+                    <p className="">support@mntdigital.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -193,7 +193,7 @@ export default function Contact() {
                     htmlFor="phone"
                     className="text-sm font-medium leading-none"
                   >
-                    Company
+                    Phone
                   </label>
                   <Input
                     key="phone"

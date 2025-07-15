@@ -12,7 +12,7 @@ import { MagicCard } from "./ui/magic-card";
 
 const Analysis = () => {
   return (
-    <div className="relative flex flex-col items-center justify-center py-20">
+    <div className="relative flex flex-col items-center justify-center py-20" id="how">
       <Container>
         <div className="mx-auto max-w-2xl space-y-6 text-center my-20">
           <h1 className="text-center text-4xl font-semibold lg:text-5xl">
@@ -21,7 +21,7 @@ const Analysis = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-400 mx-auto rounded-full"></div>
 
           <p>
-            Get started with holoiptv IPTV in just 3 simple steps. Setup takes
+            Get started with mntdigital IPTV in just 3 simple steps.<br/> Setup takes
             less than 5 minutes!
           </p>
         </div>

@@ -44,11 +44,11 @@ export default function CallToAction() {
     <div className=" py-[72px] sm:py-24 flex justify-center">
       <div className="container max-w-xl relative">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold  mb-4">
             Get instant access
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-400 mx-auto rounded-full"></div>
-          <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
+          <p className="  mt-6 text-lg max-w-2xl mx-auto">
             Be the first to know Get the latest releases and best deals
             delivered to your inbox.
           </p>
@@ -64,12 +64,12 @@ export default function CallToAction() {
             value={formData.email}
             onChange={handleChange}
             placeholder="Email"
-            className="flex-1 text-gray-900 block w-full rounded-none rounded-r-md py-2 px-3 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+            className="flex-1 text-white block w-full rounded-none rounded-r-md py-2 px-3 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
           />
           <div className="flex  justify-start gap-3">
             <button
               type="submit"
-              className="w-full  py-2 px-5 rounded-lg bg-orange-400 border-orange-500 text-white hover:bg-orange-600"
+              className="w-full  py-2 px-5 rounded-lg bg-orange-500 border-orange-500 text-white hover:bg-orange-600"
             >
               {loading ? "Get access..." : "Get access"}
             </button>

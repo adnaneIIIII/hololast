@@ -54,3 +54,14 @@ model Deal {
   email       String
   createdAt   DateTime @default(now())
 } 
+
+model Products {
+  id              String   @id @default(uuid())
+  Product_name    String
+  description     String
+  shortdescription String
+  price           Float
+  compareAtPrice  Float
+  images          String[]
+  createdAt       DateTime @default(now())
+}

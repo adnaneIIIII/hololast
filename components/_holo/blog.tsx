@@ -60,10 +60,15 @@ export default function BlogPost() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Array.isArray(contacts) && contacts.length > 0 ? (
             contacts.slice(0, 3).map((post) => (
+                <Link key={post.id}
+                      className="flex items-center"
+                      href={`/post/${post.id}`}
+                    >
               <Card
                 key={post.id}
                 className=" border-gray-700 overflow-hidden group hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-300 hover:-translate-y-2"
               >
+              
                 <div className="relative overflow-hidden">
                   <Image
                     src={
@@ -122,7 +127,9 @@ export default function BlogPost() {
                     </Link>
                   </Button>
                 </CardContent>
+              
               </Card>
+               </Link>
             ))
           ) : (
             <p className="text-gray-400 col-span-full text-center">

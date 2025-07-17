@@ -21,7 +21,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ onClose, onSubscribe }) => {
 
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 3000);
+    }, 9000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -68,7 +68,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ onClose, onSubscribe }) => {
 
       setTimeout(() => {
         handleClose();
-      }, 3000);
+      }, 5000);
     } else {
       setResponse("Failed to submit form.");
     }

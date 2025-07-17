@@ -152,7 +152,7 @@ export default function Contact() {
                       value={formData.firstname}
                       onChange={handleChange}
                       placeholder="Firstname"
-                      className="flex-1 text-gray-900 block w-full rounded-none rounded-r-md py-2 px-3 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                      className="flex-1 text-white block w-full rounded-none rounded-r-md py-2 px-3 border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                     />
                   </div>
                   <div className="space-y-2">
@@ -223,7 +223,7 @@ export default function Contact() {
                 <div className="flex justify-start gap-3 mt-4">
                   <button
                     type="submit"
-                    className="w-full py-2 text-black rounded-lg bg-white border-orange-500 hover:bg-orange-600"
+                    className="w-full py-2 text-black rounded-lg bg-white border-orange-500 hover:bg-orange-600 hover:text-white"
                   >
                     {loading ? "Submitting..." : "Submit"}
                   </button>

@@ -54,9 +54,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
        
-      </head>
-      <body className={`${geistSans.className} antialiased`}>
- <head>
         {/* Clarity Script */}
         <Script
           id="clarity-script"
@@ -64,12 +61,17 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `(function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/sfg01wp9qh";
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/s7pdk3i091";
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "sfg01wp9qh");`,
+            })(window, document, "clarity", "script", "s7pdk3i091");`,
           }}
         />
+      
+
+
       </head>
+      <body className={`${geistSans.className} antialiased`}>
+
        
         <ThemeProvider
           attribute="class"

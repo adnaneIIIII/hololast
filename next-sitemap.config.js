@@ -49,7 +49,23 @@ const config = {
     } catch (error) {
       console.error('Error fetching blog posts for sitemap:', error);
     }
-
+   try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/product`);
+      const products = await res.json();
+      
+      if (Array.isArray(products)) {
+        products.forEach(product => {
+          result.push({
+            loc: `/product/${product.id}`,
+            lastmod: product.updatedAt ? new Date(product.updatedAt).toISOString() : new Date().toISOString(),
+            changefreq: 'weekly',
+            priority: 0.8
+          });
+        });
+      }
+    } catch (error) {
+      console.error('Error fetching products for sitemap:', error);
+    }
     // Add static priority pages
     const priorityPages = [
       { url: '/', priority: 1.0, changefreq: 'daily' },

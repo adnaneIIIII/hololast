@@ -153,7 +153,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ onClose, onSubscribe }) => {
                   Thank You for Subscribing!
                 </h2>
                 <p className="text-gray-600 mb-4">
-                  You'll be the first to know about our latest IPTV offers and updates.
+                  You&apos;ll be the first to know about our latest IPTV offers and updates.
                 </p>
                 <p className="text-lg font-semibold text-gray-800">
                   Stay tuned — exciting content is on the way!

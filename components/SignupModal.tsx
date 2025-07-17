@@ -96,8 +96,8 @@ const SignupModal: React.FC<SignupModalProps> = ({ onClose, onSubscribe }) => {
 
         <div className="text-center">
           {!isSubscribed ? (
-            <div className="flex justify-center items-center">
-              <div className='w-[40%]'>
+            <div className="flex flex-col md:flex-row justify-center items-center">
+              <div className='w-full md:w-[40%] mb-6 md:mb-0'>
                 <h2 className="text-3xl font-bold text-gray-800 mb-2">
                   Subscribe & Stay Updated!
                 </h2>
@@ -135,7 +135,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ onClose, onSubscribe }) => {
                   )}
                 </form>
               </div>
-              <div className='w-[60%]'>
+              <div className='w-full md:w-[60%]'>
                 <Image
                   src="/cta-img.webp"
                   alt="IPTV Service"

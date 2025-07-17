@@ -66,13 +66,6 @@ export function TestimonialCard({
       </div>
 
       <div className="flex w-full select-none items-center justify-start gap-5">
-        {/* <img
-          width={40}
-          height={40}
-          src={img || ''}
-          alt={name}
-          className="size-10 rounded-full ring-1 ring-blue-500/20 ring-offset-2"
-        /> */}
         <Image
           width={40}
           height={40}
@@ -89,6 +82,7 @@ export function TestimonialCard({
     </div>
   );
 }
+
 const testimonials = [
   {
     name: 'Liam Thompson',
@@ -256,69 +250,67 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="flex min-h-screen items-center justify-center px-4 relative" id='#Testimonials'>
-      {/* Decorative elements */}
-        <div className="w-full max-w-6xl mx-auto py-10 relative">
+    <section className="flex min-h-screen items-center justify-center px-4 relative overflow-hidden" id='#Testimonials'>
+      {/* Decorative elements - Fixed for mobile */}
+      <div className="w-full max-w-6xl mx-auto py-10 relative">
+        {/* Mobile-friendly blur elements */}
+        <div className="absolute left-0 top-20 z-10 h-32 w-32 md:h-64 md:w-64 md:-left-20 rounded-full bg-blue-500/5 blur-3xl" />
+        <div className="absolute right-0 bottom-20 z-10 h-32 w-32 md:h-64 md:w-64 md:-right-20 rounded-full bg-blue-500/5 blur-3xl" />
 
-      <div className="absolute -left-20 top-20 z-10 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
-      <div className="absolute -right-20 bottom-20 z-10 h-64 w-64 rounded-full bg-blue-500/5 blur-3xl" />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="mb-4 text-center text-3xl font-semibold lg:text-5xl font-bold leading-[1.2] tracking-tighter text-foreground md:text-4xl">
+            What Our Users Are Saying
+          </h2>
+          <div className="w-24 mt-8 h-1 bg-gradient-to-r from-orange-500 to-orange-400 mx-auto rounded-full"></div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="mb-4 text-center text-4xl font-semibold lg:text-5xl font-bold leading-[1.2] tracking-tighter text-foreground md:text-5xl">
-          What Our Users Are Saying
-        </h2>
-                <div className="w-24 mt-8 h-1 bg-gradient-to-r from-orange-500 to-orange-400 mx-auto rounded-full"></div>
+          <h3 className="mx-auto mb-8 mt-8 max-w-lg text-balance text-center text-base md:text-lg font-medium tracking-tight text-muted-foreground px-2">
+            Don&apos;t just take our word for it. Here&apos;s what{' '}
+            <span className="bg-gradient-to-r from-orange-500 to-sky-500 bg-clip-text text-transparent">
+              real users
+            </span>{' '}
+            are saying about{' '}
+            <span className="font-semibold text-orange-500">MNTdigital</span>
+          </h3>
+        </motion.div>
 
-        <h3 className="mx-auto mb-8 mt-8 max-w-lg text-balance text-center text-lg font-medium tracking-tight text-muted-foreground">
-          
-          Don&apos;t just take our word for it. Here&apos;s what{' '}
-          <span className="bg-gradient-to-r from-orange-500 to-sky-500 bg-clip-text text-transparent">
-            real users
-          </span>{' '}
-          are saying about{' '}
-          <span className="font-semibold text-orange-500">MNTdigital</span>
-        </h3>
-      </motion.div>
-
-      <div className="relative mt-6 max-h-screen overflow-hidden">
-        <div className="gap-4 md:columns-2 xl:columns-3 2xl:columns-4">
-          {Array(Math.ceil(testimonials.length / 3))
-            .fill(0)
-            .map((_, i) => (
-              <Marquee
-                vertical
-                key={i}
-                className={cn({
-                  '[--duration:60s]': i === 1,
-                  '[--duration:30s]': i === 2,
-                  '[--duration:70s]': i === 3,
-                  
-                })}
-              >
-                {testimonials.slice(i * 3, (i + 1) * 3).map((card, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      delay: Math.random() * 0.8,
-                      duration: 1.2,
-                    }}
-                  >
-                    <TestimonialCard {...card} />
-                  </motion.div>
-                ))}
-              </Marquee>
-            ))}
+        <div className="relative mt-6 max-h-screen overflow-hidden">
+          <div className="gap-4 md:columns-2 xl:columns-3 2xl:columns-4">
+            {Array(Math.ceil(testimonials.length / 3))
+              .fill(0)
+              .map((_, i) => (
+                <Marquee
+                  vertical
+                  key={i}
+                  className={cn({
+                    '[--duration:60s]': i === 1,
+                    '[--duration:30s]': i === 2,
+                    '[--duration:70s]': i === 3,
+                  })}
+                >
+                  {testimonials.slice(i * 3, (i + 1) * 3).map((card, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: Math.random() * 0.8,
+                        duration: 1.2,
+                      }}
+                    >
+                      <TestimonialCard {...card} />
+                    </motion.div>
+                  ))}
+                </Marquee>
+              ))}
+          </div>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 w-full bg-gradient-to-t from-background from-20%"></div>
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 w-full bg-gradient-to-b from-background from-20%"></div>
         </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 w-full bg-gradient-to-t from-background from-20%"></div>
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 w-full bg-gradient-to-b from-background from-20%"></div>
-      </div>
       </div>
     </section>
   );

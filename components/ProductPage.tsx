@@ -84,10 +84,14 @@ function ProductPage({ data }: { data: Product | null }) {
 
           {/* Buy Button */}
           <Button  className="w-full py-6 bg-orange-500 text-white hover:text-black"  asChild>
-            <Link  className="w-full mt-6 " href={`/checkout/${data?.id}`} >
+             <a   href={`https://mntdigitals.com/checkout/${data?.id}`}
+             
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
 
               <ShoppingBag className="w-5 h-5 mr-2" /> Buy Now
-            </Link>
+            </a>
 </Button>
           {/* Payment Methods */}
           <div className="flex justify-center mt-6">

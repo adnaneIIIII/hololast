@@ -146,17 +146,14 @@ const SignupModal: React.FC<SignupModalProps> = ({ onClose, onSubscribe }) => {
               </div>
             </div>
           ) : (
-            <div className="flex justify-center items-center">
-              <div className='w-[40%]'>
-                <div className="text-green-600 text-4xl mb-4">✅</div>
+            <div className="flex flex-col md:flex-row justify-center items-center">
+              <div className='w-full md:w-[40%] mb-6 md:mb-0'>
+
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">
                   Thank You for Subscribing!
                 </h2>
                 <p className="text-gray-600 mb-4">
                   You&apos;ll be the first to know about our latest IPTV offers and updates.
-                </p>
-                <p className="text-lg font-semibold text-gray-800">
-                  Stay tuned — exciting content is on the way!
                 </p>
                 <div className="mt-6">
                   <button
@@ -167,7 +164,7 @@ const SignupModal: React.FC<SignupModalProps> = ({ onClose, onSubscribe }) => {
                   </button>
                 </div>
               </div>
-              <div className='w-[60%]'>
+              <div className='w-full md:w-[60%]'>
                 <Image
                   src="/cta-img.webp"
                   alt="IPTV Service"

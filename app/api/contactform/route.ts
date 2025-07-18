@@ -77,7 +77,7 @@ export async function POST(req: NextRequest) {
 
     // Send the email - await the promise
     await resend.emails.send({
-      from: "contact@mntdigital.com", // Use your verified domain
+      from: "support@mntdigital.com", // Use your verified domain
       to: "zarveo@gmail.com",   // Your receiving email
 
       subject: subject,
@@ -89,7 +89,7 @@ export async function POST(req: NextRequest) {
 
 
       await resend.emails.send({
-      from: "contact@mntdigital.com", // Use your verified domain
+      from: "support@mntdigital.com", // Use your verified domain
       to: email,   // Your receiving email
       subject: "Thank you for contacting NMT - We received your message",
       html: Content,

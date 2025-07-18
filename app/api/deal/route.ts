@@ -23,8 +23,8 @@ export async function POST(req: NextRequest) {
     `;
 
     resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "zarveo@gmail.com",
+      from: "support@mntdigital.com",
+      to: "support@mntdigital.com",
       subject: "Hello World",
       html: htmlContent,
     });

@@ -72,7 +72,7 @@ export default function Page() {
             <div className="lg:col-span-7">
               <div className=" rounded-lg shadow-sm p-6 transition-all">
                 <div className="text-5xl font-bold text-black/80 py-14  tracking-wider">
-                  CheckOut
+                  Order Your Free Trial
                 </div>
                 <h1 className="text-2xl font-bold text-gray-800 mb-6">
                   Details

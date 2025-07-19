@@ -36,7 +36,7 @@ function ImageSlider({ images = [] }: any) {
           src={images[mainImageIndex]}
           width={600}
           height={600}
-          alt="Product images"
+          alt="sports Broadcasting: Live Football Match Streaming"
           className="object-cover w-[600px] h-[600px] rounded-lg"
         />
         <div className="absolute inset-0 flex items-center mb-32 justify-between px-4">
@@ -63,7 +63,7 @@ function ImageSlider({ images = [] }: any) {
                 src={image}
                 width={100}
                 height={100}
-                alt="Product images"
+                alt="sports Broadcasting: Live Football Match Streaming"
                 className="object-cover w-[100px] h-[100px]"
               />
             </div>

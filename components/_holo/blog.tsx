@@ -77,7 +77,7 @@ export default function BlogPost() {
                         ? post.imgUrl
                         : "/placeholder.svg"
                     }
-                    alt={post.title}
+                    alt={post.title || "Popular Movie: Action Thriller Available on IPTV"}
                     width={400}
                     height={240}
                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"

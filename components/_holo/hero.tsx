@@ -88,7 +88,7 @@ const Hero = () => {
               <div className="rounded-lg lg:rounded-[22px] border border-border bg-background">
                 <Image
                   src="/assets/holo-screen.jpg"
-                  alt="dashboard"
+                  alt="sports Broadcasting: Live Football Match Streaming"
                   width={1920}
                   height={580}
                   className="rounded-lg lg:rounded-[20px]"

@@ -70,7 +70,7 @@ export default function HeroSection() {
             >
             <Image
               src={"/agency.png"}
-              alt="background"
+              alt="sports Broadcasting: Live Football Match Streaming"
               className="absolute w-full min-h-max inset-x-0 top-56 -z-20 hidden lg:top-0 dark:block"
               width="1320"
               height="1080"

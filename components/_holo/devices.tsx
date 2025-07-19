@@ -39,7 +39,7 @@ export default function Devices() {
               <Image
                 className="flex-none h-16 w-auto "
                 src={`/icons/` + item}
-                alt="Nvidia Logo"
+                alt="sports Broadcasting: Live Football Match Streaming"
                 height={100}
                 width={150}
                 key={item}
@@ -49,7 +49,7 @@ export default function Devices() {
               <Image
                 className="flex-none h-16 w-auto "
                 src={`/icons/` + item}
-                alt="Nvidia Logo"
+                alt="sports Broadcasting: Live Football Match Streaming"
                 height={100}
                 width={150}
                 key={item}

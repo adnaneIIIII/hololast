@@ -97,7 +97,7 @@ function ProductPage({ data }: { data: Product | null }) {
           <div className="flex justify-center mt-6">
             <Image
               src="/payment.svg"
-              alt="Payment Methods"
+              alt="sports Broadcasting: Live Football Match Streaming"
               width={450}
               height={80}
             />

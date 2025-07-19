@@ -15,6 +15,8 @@ import CallToAction from "@/components/_holo/CallToAction";
 import BlogPost from "@/components/_holo/blog";
 import Testimonials from "@/components/_holo/ui/testimonials-marquee";
 import SignupModal from "@/components/SignupModal";
+import Head from "next/head";
+import Features from "@/components/featurs";
 
 
 type Product = {
@@ -40,6 +42,7 @@ export default function Page() {
 
 
 
+
   // Products
 
   const [product, setProduct] = useState<Product[]>([]);
@@ -54,8 +57,6 @@ export default function Page() {
     console.log(res.product);
   };
 
-
-
   const [showModal, setShowModal] = useState(true);
 
   const handleSubscribe = (email: string) => {
@@ -63,8 +64,93 @@ export default function Page() {
   };
 
 
+
+
+
+
+
   return (
     <>
+    <Head>
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "mntdigital",
+              "description": "Watch 1000+ sports, news, and entertainment channels instantly with mntdigital. Includes free trial and flexible plans.",
+              "provider": {
+                "@type": "Organization",
+                "name": "mntdigital",
+                "url": "https://mntdigital.com",
+                "ContactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+1-782-222-1472",
+                  "contactType": "customer service",
+                  "email": "support@mntdigital.com"
+                }, 
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "Worldwide"
+              },
+              "serviceType": "IPTV Subscription",
+              "url": "https://mntdigital.com",
+              "offers": [
+                {
+                  "@type": "Offer",
+                  "name": "Free Trial",
+                  "price": "0",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock",
+                  "eligibleDuration": {
+                    "@type": "QuantitativeValue",
+                    "value": 1,
+                    "unitCode": "DAY"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "name": "1 Month Plan",
+                  "price": "13.99",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock",
+                  "eligibleDuration": {
+                    "@type": "QuantitativeValue",
+                    "value": 1,
+                    "unitCode": "MON"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "name": "6 Months Plan",
+                  "price": "36.99",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock",
+                  "eligibleDuration": {
+                    "@type": "QuantitativeValue",
+                    "value": 6,
+                    "unitCode": "MON"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "name": "1 Year Plan",
+                  "price": "49.99",
+                  "priceCurrency": "USD",
+                  "availability": "https://schema.org/InStock",
+                  "eligibleDuration": {
+                    "@type": "QuantitativeValue",
+                    "value": 12,
+                    "unitCode": "MON"
+                  }
+                }
+              ]
+            })
+          }}
+        />
+    </Head>
       {/* <SignUpModal /> */}
   
    <div>
@@ -77,8 +163,6 @@ export default function Page() {
         />
       )}
     </div>
-
-    
       {/* <Banner /> */}
       <Navbar />
       {/* <Earth/> */}
@@ -87,9 +171,9 @@ export default function Page() {
       <Companies />
       {/* <HeroSection /> */}
       <LogoTicker />
+      <Features />
       {/* <ProductShow /> */}
-      <PricingSection {...product} />
-      
+      <PricingSection />
       <Analysis />
       {/* <Component /> */}
       <BlogPost />

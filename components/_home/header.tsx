@@ -14,7 +14,7 @@ export default function Header() {
               src={"/Mntdigitals-bo.png"}
               width={120}
               height={100}
-              alt="mntdigital"
+              alt="sports Broadcasting: Live Football Match Streaming"
               className="h-18 w-28 relative"
             />
           </Link>

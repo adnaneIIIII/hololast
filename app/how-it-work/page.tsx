@@ -22,9 +22,9 @@ export default function HowItWorks() {
       <Navbar />
       <main className="min-h-screen bg-black text-white">
         <section className="container mx-auto text-center py-16 px-4">
-          <h2 className="text-center font-bold mb-6 text-5xl sm:text-6xl tracking-tighter">
+          <h1 className="text-center font-bold mb-6 text-5xl sm:text-6xl tracking-tighter">
             How It<span className="text-orange-500"> Works</span>
-          </h2>
+          </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Get started with mntdigital IPTV in just 3 simple steps. Setup takes
             less than 5 minutes!

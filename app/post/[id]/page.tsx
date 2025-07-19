@@ -119,7 +119,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             <div className="not-prose mb-8">
               <Image
                 src={blog?.imgUrl}
-                alt={blog.title || "Blog post image"}
+                alt={blog.title || "Popular Movie: Action Thriller Available on IPTV"}
                 width={400}
                 height={400}
                 className="w-full h-440 object-cover transition-transform duration-300 group-hover:scale-110"
@@ -160,7 +160,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
               <div className="flex items-start space-x-4">
                 <Image
                   src="/ayoub.jpg?height=80&width=80"
-                  alt="Author avatar"
+                  alt="sports Broadcasting: Live Football Match Streaming"
                   width={80}
                   height={80}
                   className="rounded-full"

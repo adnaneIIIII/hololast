@@ -69,7 +69,7 @@ export function TestimonialCard({
         <Image
           width={40}
           height={40}
-          src={img || ''}
+          src={img || 'sports Broadcasting: Live Football Match Streaming'}
           alt={name}
           className="size-10 rounded-full ring-1 ring-blue-500/20 ring-offset-2"
         />

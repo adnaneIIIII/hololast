@@ -166,7 +166,7 @@ const [formData, setFormData] = useState({
                               height={100}
                               width={100}
                               src={image}
-                              alt={"product image"}
+                              alt={"Popular Movie: Action Thriller Available on IPTV"}
                               className="w-full h-full object-cover rounded-lg border"
                             />
                             <button

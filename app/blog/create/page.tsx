@@ -159,7 +159,7 @@ export default function ProductPage() {
                               height={100}
                               width={100}
                               src={image}
-                              alt="Uploaded image"
+                              alt="Popular Movie: Action Thriller Available on IPTV"
                               className="w-full h-full object-cover rounded-lg border"
                             />
                             <button

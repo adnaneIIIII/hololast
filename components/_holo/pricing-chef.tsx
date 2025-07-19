@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface PricingPlan {
   id: string;
@@ -34,7 +35,7 @@ const pricingPlans: PricingPlan[] = [
   {
     id: "1-month",
     name: "1 Month Plan",
-    price: "$13.99",
+    price: "$15.99",
     period: "per month",
     connection: "1 connection",
     features: [
@@ -52,7 +53,7 @@ const pricingPlans: PricingPlan[] = [
   {
     id: "6-months",
     name: "6 Months Plan",
-    price: "$36.99",
+    price: "$39.99",
     period: "6 months",
     originalPrice: "$83.94",
     savings: "Save $47",
@@ -73,7 +74,7 @@ const pricingPlans: PricingPlan[] = [
   {
     id: "12-months",
     name: "12 Months Plan",
-    price: "$49.99",
+    price: "$59.99",
     period: "12 months",
     originalPrice: "$167.88",
     savings: "Save $118",
@@ -101,7 +102,25 @@ const pricingPlans: PricingPlan[] = [
 //   );
 // }
 
-export default function PricingSection(props: Product[]) {
+  
+
+
+
+
+export default function PricingSection() {
+    const [Product, setProduct] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchContacts = async () => {
+      const res = await fetch("/api/product");
+      const data = await res.json();
+      setProduct(data);
+      setLoading(false);
+    };
+
+    fetchContacts();
+  }, []); 
   return (
     <section className="py-16 px-4   min-h-screen" id="pricing">
       <div className="max-w-7xl mx-auto">
@@ -175,10 +194,10 @@ export default function PricingSection(props: Product[]) {
               <CardContent className="flex flex-col flex-grow pt-0">
                 <ul className="space-y-3 mb-6">
                   {plan.features.map((feature, index) => (
-                    <li key={index} className="flex items-center text-sm">
+                    <h2 key={index} className="flex items-center text-sm">
                       <Check className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />
                       <span className="">{feature}</span>
-                    </li>
+                    </h2>
                   ))}
                 </ul>
 
@@ -194,7 +213,7 @@ export default function PricingSection(props: Product[]) {
                     asChild
                   >
                     <a
-                      href={`https://mntdigitals.com/checkout/${props[index]?.id}`}
+                      href={`https://mntdigitals.com/checkout/${Product[index]?.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

@@ -71,7 +71,7 @@ export default function Testimonials() {
                     src="/test1.jpeg"
                     width={40}
                     height={40}
-                    alt="Michael Chen"
+                    alt="sports Broadcasting: Live Football Match Streaming"
                     className="rounded-full "
                   />
                   <div>
@@ -122,7 +122,7 @@ export default function Testimonials() {
                     src="/test2.jpeg"
                     width={40}
                     height={40}
-                    alt="Michael Chen"
+                    alt="sports Broadcasting: Live Football Match Streaming"
                     className="rounded-full"
                   />
                   <div>
@@ -174,7 +174,7 @@ export default function Testimonials() {
                     src="/test3.jpeg"
                     width={40}
                     height={40}
-                    alt="Michael Chen"
+                    alt="sports Broadcasting: Live Football Match Streaming"
                     className="rounded-full"
                   />
                   <div>

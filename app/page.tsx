@@ -65,10 +65,6 @@ export default function Page() {
 
 
 
-
-
-
-
   return (
     <>
     <Head>
@@ -173,7 +169,7 @@ export default function Page() {
       <LogoTicker />
       <Features />
       {/* <ProductShow /> */}
-      <PricingSection />
+      <PricingSection  />
       <Analysis />
       {/* <Component /> */}
       <BlogPost />

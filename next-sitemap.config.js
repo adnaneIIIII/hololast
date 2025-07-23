@@ -40,7 +40,7 @@ const config = {
       const posts = await res.json();
       posts.forEach(post => {
         result.push({
-          loc: `/blog/${post.id}`,
+          loc: `/post/${post.id}`,
           lastmod: new Date().toISOString(),
           changefreq: 'weekly',
           priority: 0.8
